@@ -293,8 +293,6 @@ svg
 .pages__carousel-item
 {
   position: relative;
-  max-width: 60rem;
-  max-height: 38rem;
 }
 
 .pages__carousel-item::after
@@ -417,3 +415,5 @@ Contact
   cursor: pointer;
   text-decoration: none;
 }
+
+/*# sourceMappingURL=main.css.map*/

@@ -7,7 +7,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js'
 import starVertexShader from './shaders/vertex.glsl'
 import starFragmentShader from './shaders/fragment.glsl'
-// import Stats from 'stats.js'
+import Stats from 'stats.js'
 
 /**
  * Preloader
@@ -86,10 +86,6 @@ const moveToPreviousSlide = () => {
 /**
  * Base
  */
-
-// const stats = new Stats()
-// stats.showPanel(0) // 0: fps, 1: ms, 2: mb, 3+: custom
-// document.body.appendChild(stats.dom)
 
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
@@ -198,7 +194,6 @@ gltfLoader.load(
     }
 )
 
-
 /**
  * Sizes
  */
@@ -252,6 +247,7 @@ const renderer = new THREE.WebGLRenderer({
 
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+
 /**
  * Animate
  */
@@ -319,7 +315,6 @@ let previousTime = 0
 
 const tick = () =>
 {
-  // stats.begin()
     
     const elapsedTime = clock.getElapsedTime()
     const deltaTime = elapsedTime - previousTime
@@ -345,16 +340,12 @@ const tick = () =>
     //update camera
     camera.position.y = - scrollY / sizes.height * objectsDistance
 
-    // Update controls
-    //controls.update()
-
     // Render
     renderer.render(scene, camera)
 
     // Call tick again on the next frame
     window.requestAnimationFrame(tick)
 
-   // stats.end()
 }
 
 
