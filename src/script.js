@@ -186,8 +186,7 @@ gltfLoader.load(
     {
         spaceman = gltf.scene
         scene.add(spaceman)
-        spaceman.position.set(0, -12, 0)
-
+        spaceman.position.set(0, -13, 0)
         mixer = new THREE.AnimationMixer(gltf.scene)
         const action = mixer.clipAction(gltf.animations[0])
         action.play()
@@ -327,9 +326,9 @@ const tick = () =>
     stars.rotation.y = elapsedTime * 0.0030
 
     //Plays the wave animation on spaceman if user is scrolled to the end of page
-    if(mixer && (window.innerHeight + window.scrollY) >= document.body.offsetHeight)
+    if(mixer)
     {
-        mixer.update(deltaTime)
+       mixer.update(deltaTime)
     }
 
 
